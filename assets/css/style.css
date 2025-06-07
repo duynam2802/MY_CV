@@ -138,6 +138,37 @@ body:not(.dark-theme) .theme-btn i::after {
 body.dark-theme .theme-btn i::after {
 }
 
+@keyframes themeIconSwitch {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    40% {
+        transform: rotate(120deg) scale(1.3);
+        opacity: 0.5;
+    }
+    60% {
+        transform: rotate(180deg) scale(0.8);
+        opacity: 0.7;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.theme-icon-animate {
+    animation: themeIconSwitch 0.5s cubic-bezier(.4,2,.6,1) both;
+}
+
+.theme-btn i {
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+}
+.theme-btn:hover i {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #667eea);
+}
+
 #lang-btn {
     display: flex;
     align-items: center;   
@@ -160,6 +191,11 @@ body.dark-theme .theme-btn i::after {
     color: #667eea;
 }
 
+.lang-btn:hover {
+    transform: scale(1.2);
+    /* filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #667eea); */
+
+}
 
 /* banner */
 
@@ -313,3 +349,4 @@ body.dark-theme .theme-btn i::after {
         opacity: 0.8;
     }
 }
+

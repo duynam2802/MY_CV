@@ -57,4 +57,8 @@ themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme', isDark);
     // Đổi icon
     themeIcon.setAttribute('name', isDark ? 'moon-outline' : 'sunny-outline');
+    // Thêm hiệu ứng
+    themeIcon.classList.remove('theme-icon-animate');
+    void themeIcon.offsetWidth; // Force reflow để reset animation
+    themeIcon.classList.add('theme-icon-animate');
 });
