@@ -63,24 +63,42 @@ themeToggleBtn.addEventListener('click', () => {
     themeIcon.classList.add('theme-icon-animate');
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const aboutSection = document.getElementById('about');
-    const hobbyList = document.querySelector('.hobby-list');
-    if (!aboutSection) return;
+// ...existing code...
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    aboutSection.classList.add('visible');
-                    if (hobbyList) hobbyList.classList.add('visible');
-                } else {
-                    aboutSection.classList.remove('visible');
-                    if (hobbyList) hobbyList.classList.remove('visible');
-                }
-            });
-        },
-        { threshold: 0.2 }
-    );
-    observer.observe(aboutSection);
+document.addEventListener('DOMContentLoaded', function () {
+    // Hiệu ứng cho section about
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+        const aboutObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        aboutSection.classList.add('visible');
+                    } else {
+                        aboutSection.classList.remove('visible');
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+        aboutObserver.observe(aboutSection);
+    }
+
+    // Hiệu ứng cho hobby-list
+    const hobbyList = document.querySelector('.hobby-list');
+    if (hobbyList) {
+        const hobbyObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        hobbyList.classList.add('visible');
+                    } else {
+                        hobbyList.classList.remove('visible');
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+        hobbyObserver.observe(hobbyList);
+    }
 });
