@@ -59,6 +59,28 @@ themeToggleBtn.addEventListener('click', () => {
     themeIcon.setAttribute('name', isDark ? 'moon-outline' : 'sunny-outline');
     // Thêm hiệu ứng
     themeIcon.classList.remove('theme-icon-animate');
-    void themeIcon.offsetWidth; // Force reflow để reset animation
+    void themeIcon.offsetWidth;
     themeIcon.classList.add('theme-icon-animate');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const aboutSection = document.getElementById('about');
+    const hobbyList = document.querySelector('.hobby-list');
+    if (!aboutSection) return;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutSection.classList.add('visible');
+                    if (hobbyList) hobbyList.classList.add('visible');
+                } else {
+                    aboutSection.classList.remove('visible');
+                    if (hobbyList) hobbyList.classList.remove('visible');
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+    observer.observe(aboutSection);
 });

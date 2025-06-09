@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/main.js" defer></script>
 
+    <!-- <link href="http://yoursite.com/themify-icons.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -23,7 +25,7 @@
                     <li><a href="#about">Giới thiệu</a></li>
                     <li><a href="#skills">Kỹ năng</a></li>
                     <li><a href="#projects">Dự án</a></li>
-                    <li><a href="">Liên hệ</a></li>
+                    <li><a href="contact">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="right-nav">
@@ -45,11 +47,15 @@
             <div class="banner-image">
                 <img src="./assets/images/av.jpg" alt="Profile Picture">
             </div>
+
             <div class="banner-content">
                 <h1>Nguyễn Đức Duy</h1>
-                <h2>Web Developer</h2>
+                <h2>Sinh viên trường Đại học Giao thông vận tải Thành phố Hồ Chí Minh</h2>
                 <p>Chào mừng bạn đến với trang cá nhân của tôi!</p>
-                <button class="btn">Xem thêm</button>
+                <div class="contact-btn">
+                    <a href="#contact" class="btn my-button bt1">Liên hệ</a>
+                    <a href="#projects" class="btn my-button bt2">Xem dự án</a>
+                </div>
             </div>
             <button class="scroll-down" aria-label="Lướt xuống">
                 <a href="#about"></a>
@@ -60,8 +66,77 @@
     <!-- about -->
     <section id="about" class="about">
         <div class="container">
-            <div class="information"></div>
-            <div class="hobbies"></div>
+            <div class="information">
+                <h2 class="my-title">Thông tin cá nhân</h2>
+            </div>
+            <div class="info-edu-wrapper">
+                <div class="info card">
+                    <h2>Thông tin cơ bản</h2>
+                    <div class="info-item">
+                        <span class="ti-user"></span>
+                        <h3>Họ và tên:</h3>
+                        <p>Nguyễn Đức Duy</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <span class="ti-calendar"></span>
+                            Ngày sinh:
+                        </h3>
+                        <p>28/02/2005</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <span class="ti-email"></span>
+                            Email:
+                        </h3>
+                        <p>duynd2971@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <span class="ti-mobile"></span>
+                            Số điện thoại:
+                        </h3>
+                        <p>0395124671</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>
+                            <span class="ti-location-pin"></span>
+                            Địa chỉ:
+                        </h3>
+                        <p>Thành phố Hồ Chí Minh, Việt Nam</p>
+                    </div>
+
+                </div>
+                <div class="about-me card">
+                    <h2>Giới thiệu</h2>
+                    <p>Là một sinh viên năm hai tại trường Đại học Giao thông vận tải Thành phố Hồ Chí Minh, chuyên
+                        ngành Công nghệ thông tin. <br>Đam mê lập trình và luôn tìm kiếm cơ hội để học hỏi và phát triển
+                        kỹ năng của mình. <br>Thích làm việc nhóm và hòa đồng với mọi người.</p>
+                </div>
+
+                <div class="hobbies card">
+                    <h2>Sở thích</h2>
+                    <ul class="hobby-list">
+                        <li class="hobby-item">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                            <p>Lập trình</p>
+                        </li>
+                        <li class="hobby-item">
+                            <span class="ti-music-alt"></span>
+                            <p>Nghe nhạc</p>
+                        </li>
+                        <li class="hobby-item">
+                                <span class="ti-video-clapper"></span>
+                            <p>Xem phim</p>
+                        </li>
+                        <li class="hobby-item">
+                            <span class="ti-book"></span>
+                            <p>Đọc sách</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -75,7 +150,14 @@
         <div class="skill-item"></div>
     </section>
 
-    
+    <!-- contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+        </div>
+    </section>
+
+
 </body>
 
 </html>
