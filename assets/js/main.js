@@ -197,6 +197,56 @@ document.addEventListener('DOMContentLoaded', function () {
             `).join('');
     }
 
+    // thêm các project dự án
+    // ...existing code...
+
+const projects = [
+    {
+        img: "./assets/images/project_cv_img.png",
+        title: "Website CV cá nhân",
+        des: "Trang web giới thiệu bản thân với thiết kế hiện đại và animation mượt mà.",
+        tech: ["HTML5", "CSS3", "JavaScript"],
+        link: "https://github.com/duynam2802/MY_CV",
+        demo: "https://duynam2802.github.io/MY_CV/"
+    },
+    {
+        img: "./assets/images/project_checkdeadline_img.png",
+        title: "Phần mềm kiểm tra deadline",
+        des: "Check Deadline App giúp tự động kiểm tra và thêm các sự kiện các môn học ở trang UTH course vào Google Calendar và Task.",
+        tech: ["Python", "Google API"],
+        link: "https://github.com/duynam2802/UTH_APP",
+        demo: ""
+    }
+];
+
+const projectList = document.querySelector('.project-list.collunm');
+if (projectList) {
+    projectList.innerHTML = projects.map(project => `
+        <div class="project-item card">
+            <div class="project-img">
+                <img src="${project.img}" alt="">
+                <div class="overlay"></div>
+                <div class="project-link">
+                    ${project.demo ? `
+                    <a href="${project.demo}" class="visit-project" target="_blank" title="Xem demo">
+                        <span class="ti-export"></span>
+                    </a>` : ''}
+                    <a href="${project.link}" class="link-project" target="_blank" title="Xem Github">
+                        <span class="ti-github"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="project-content">
+                <h3 class="title">${project.title}</h3>
+                <p>${project.des}</p>
+                <div class="project-tech">
+                    ${project.tech.map(t => `<span>${t}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
 });
 
 
