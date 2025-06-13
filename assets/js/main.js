@@ -216,6 +216,14 @@ const projects = [
         tech: ["Python", "Google API"],
         link: "https://github.com/duynam2802/UTH_APP",
         demo: ""
+    },
+    {
+       img: "./assets/images/project_checkdeadline_img.png",
+        title: "Child Growth Tracking System ",
+        des: "Phần mềm theo dõi sự tăng trưởng của trẻ em.",
+        tech: ["Java", "Html"],
+        link: "https://github.com/duynam2802/UTH_APP",
+        demo: "" 
     }
 ];
 
