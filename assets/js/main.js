@@ -218,10 +218,10 @@ const projects = [
         demo: ""
     },
     {
-       img: "./assets/images/project_checkdeadline_img.png",
+       img: "./assets/images/chilgrowth.png",
         title: "Child Growth Tracking System ",
-        des: "Phần mềm theo dõi sự tăng trưởng của trẻ em.",
-        tech: ["Java", "Html"],
+        des: "[Project nhóm]<br>Phần mềm theo dõi sự tăng trưởng của trẻ em.",
+        tech: ["Java", "Html", "MySQL"],
         link: "https://github.com/duynam2802/UTH_APP",
         demo: "" 
     }

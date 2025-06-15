@@ -802,7 +802,7 @@ body.dark-theme .theme-btn i::after {
     border-radius: 10px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 
 }
 
@@ -872,6 +872,9 @@ body.dark-theme .theme-btn i::after {
 }
 
 .project-item:hover .overlay {
+    transform: scale(1.07);
+
+    transition: transform 0.4s cubic-bezier(.4,2,.6,1);
     opacity: 0.7;
 }
 
@@ -891,6 +894,12 @@ body.dark-theme .theme-btn i::after {
     opacity: 0;
     transition: opacity 0.3s ease;
 
+}
+
+.project-link a:hover,
+.project-link a:hover span{
+    background-color: var(--primary-color-hover);
+    color: var(--text-light-color);
 }
 
 .project-link a {
