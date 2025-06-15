@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Light theme (mặc định) */
 :root {
     --text-light-color: #f0f0f0;
     --text-dark-color: #333;
@@ -18,6 +19,30 @@
     --primary-gradient: linear-gradient(135deg, rgb(99, 102, 241), rgb(139, 92, 246));
 }
 
+/* Dark theme: override biến */
+body.dark-theme {
+    --text-light-color: #f0f0f0;
+    --text-dark-color: #e0e0e0;
+    --background-light-first-color: #23272f;
+    --background-light-second-color: #181a20;
+    --background-dark-first-color: #121212;
+    --background-dark-second-color: #1e1e1e;
+    --primary-color: #6366f1;
+    --secondary-color: #764ba2;
+    --tertiary-color: #bbb;
+    --primary-color-hover: #818cf8;
+    --primary-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+html, body {
+    /* background: var(--background-light-second-color); */
+    background-color: var(--background-light-second-color);
+}
+
+body.dark-theme, body.dark-theme html {
+    background: var(--background-dark-second-color);
+}
+
 html {
     scroll-behavior: smooth;
     height: 100%;
@@ -26,7 +51,7 @@ html {
 body {
     font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--background-light-first-color);
     overflow-x: hidden;
     height: 100%;
 }
@@ -79,7 +104,7 @@ body {
 }
 
 .card {
-    background: white;
+    background: var(--background-light-second-color);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -182,7 +207,7 @@ body {
   border: none;
   border-radius: 5px;
   background-color: transparent;
-  color: #333;
+  color: var(--text-dark-color);
   cursor: pointer;
   /* transition: background-color 0.3s; */
 }
@@ -515,7 +540,7 @@ body.dark-theme .theme-btn i::after {
 
 .info-item p {
     font-size: 16px;
-    color: #444;
+    color: var(--text-dark-color);
     margin-left: 0;        
     display: inline-block;
     margin-bottom: 0;      
@@ -635,6 +660,30 @@ body.dark-theme .theme-btn i::after {
     animation: fadeInUp 1.3s cubic-bezier(.4,2,.6,1) forwards;
 }
 
+.about-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 12px 0 0 0;
+    color: var(--text-dark-color);
+    font-size: 16.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-list li {
+    background: var(--background-light-first-color);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.04);
+    transition: background 0.2s;
+}
+
+.about-list li:hover {
+    background: #e0e7ff;
+}
+
 .hobby-list .hobby-item {
     opacity: 0;
     transform: translateY(40px);
@@ -692,6 +741,10 @@ body.dark-theme .theme-btn i::after {
     
 }
 
+.skill-des p {
+    color: var(--text-dark-color);
+}
+
 .skill-level {
     margin-left: auto;
     text-align: right;
@@ -712,6 +765,54 @@ body.dark-theme .theme-btn i::after {
     
 }
 
+
+
+
+
+.education.card h2 {
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.education.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.education.card li {
+    margin-bottom: 16px;
+    font-size: 16.5px;
+    color: var(--text-dark-color);
+    background: var(--background-light-first-color);
+    border-radius: 12px;
+    padding: 16px 18px 12px 18px;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.06);
+    transition: background 0.2s;
+    position: relative;
+    border: none; /* Bỏ viền trái */
+}
+
+.education.card li:last-child {
+    margin-bottom: 0;
+}
+
+.education.card strong {
+    color: var(--primary-color, #6366f1);
+    font-weight: 600;
+    font-size: 16.5px;
+}
+
+.education.card li:hover {
+    background: #e0e7ff;
+    box-shadow: 0 4px 16px rgba(99,102,241,0.13);
+
+}
+
 .course-list {
     list-style: none;
     padding: 0;
@@ -723,7 +824,7 @@ body.dark-theme .theme-btn i::after {
 
 
 .course-item {
-    background: #f8fafc;
+    background: var(--background-light-first-color);
     border-radius: 10px;
     margin-bottom: 14px;
     padding: 16px 20px;
@@ -733,6 +834,7 @@ body.dark-theme .theme-btn i::after {
 
 .course-item:hover {
     box-shadow: 0 4px 16px rgba(99,102,241,0.13);
+    background-color: #e0e7ff;
 }
 
 .course-info {
@@ -839,6 +941,7 @@ body.dark-theme .theme-btn i::after {
 
 .project-content {
     margin: 20px;
+    color: var(--text-dark-color);
 }
 
 .project-content .title,
@@ -937,15 +1040,266 @@ body.dark-theme .theme-btn i::after {
 
 /* contact */
 .contact {
-    height: 100vh;
     background-color: var(--background-light-second-color);
+}
+
+.contact .collunm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.form-group {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px 14px;
+    border: 1px solid var(--background-light-second-color);
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s;
+    background: var(--background-light-second-color);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid var(--primary-color);
+    background: var(--background-light-first-color);
+}
+
+.contact-columns {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    align-items: flex-start;
+}
+
+.contact-form {
+    flex: 1 1 320px;
+}
+
+.contact-form input,
+.contact-form textarea {
+
+}
+
+.contact-info {
+    flex: 1 1 220px;
+    /* max-width: 320px; */
+    background: var(--background-light-first-color);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(99,102,241,0.08);
+    padding: 32px 24px;
+    margin-top: 0;
+}
+
+
+.contact-info span {
+    color: var(--primary-color);
+    font-size: 20px;
 }
 
 
 
+.contact-form {
+    flex: 1 1 340px;
+    background: var(--background-light-first-color);
+    padding: 32px 28px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(99,102,241,0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: #444;
+    background: var(--background-light-second-color);
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.04);
+}
+
+.contact-info li:hover {
+    box-shadow: 0 4px 16px rgba(99,102,241,0.13);
+    background-color: var(--background-light-second-color);
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--text-dark-color);
+}
+
+.contact-info span {
+    color: var(--primary-color);
+    font-size: 22px;
+    background: var(--background-light-second-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .contact-columns {
+        flex-direction: column;
+        gap: 28px;
+        align-items: stretch;
+    }
+    .contact-form, .contact-info {
+        max-width: 100%;
+    }
+}
+
+.contact-location {
+    position: relative;
+    cursor: pointer;
+}
+
+.contact-location .map-popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%);
+    background: var(--background-light-second-color);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(99,102,241,0.18);
+    padding: 12px;
+    z-index: 100;
+    min-width: 320px;
+    border: 2px solid var(--primary-color);
+    animation: fadeInMap 0.3s;
+}
+
+@keyframes fadeInMap {
+    from { opacity: 0; transform: translateY(20px) scale(0.95);}
+    to   { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.contact-location:hover .map-popup {
+    display: block;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-link i ,
+.social-link svg {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link  {
+    color: var(--background-light-first-color);
+    
+}
 
 
+
+.social-link:hover i{
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+
+/* footer */
+/* footer */
+.footer {
+    /* background: linear-gradient(90deg, #e0e7ff 0%, #f3f4f6 100%); */
+    background-color: var(--background-light-first-color);
+    padding: 22px 0 14px 0;
+    text-align: center;
+    color: var(--text-dark-color);
+    font-size: 16px;
+    border-top: 1.5px solid #e5e7eb;
+    /* margin-top: 48px; */
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -4px 24px rgba(99,102,241,0.08);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+/* animation card */
+/* Animation keyframes */
+@keyframes fadeInUpCard {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card,
+.education.card,
+.course.card,
+.project-item.card,
+.contact-form.card {
+    opacity: 0;
+    animation: fadeInUpCard 1.4s cubic-bezier(.4,1,.6,1) forwards;
+}
+
+.education.card { animation-delay: 0.2s; }
+.course.card { animation-delay: 0.4s; }
+.project-item.card { animation-delay: 0.6s; }
+.contact-form.card { animation-delay: 0.8s; }
+
+.card.visible,
+.education.card.visible,
+.course.card.visible,
+.project-item.card.visible,
+.contact-form.card.visible {
+    opacity: 1;
+    animation: fadeInUpCard 1.4s cubic-bezier(.4,1,.6,1) forwards;
+}

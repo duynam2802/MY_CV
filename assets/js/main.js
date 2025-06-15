@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', activateNavLink);
     activateNavLink(); // chạy lần đầu
-    
+
     // Hiệu ứng cho section about
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
@@ -200,36 +200,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // thêm các project dự án
     // ...existing code...
 
-const projects = [
-    {
-        img: "./assets/images/project_cv_img.png",
-        title: "Website CV cá nhân",
-        des: "Trang web giới thiệu bản thân với thiết kế hiện đại và animation mượt mà.",
-        tech: ["HTML5", "CSS3", "JavaScript"],
-        link: "https://github.com/duynam2802/MY_CV",
-        demo: "https://duynam2802.github.io/MY_CV/"
-    },
-    {
-        img: "./assets/images/project_checkdeadline_img.png",
-        title: "Phần mềm kiểm tra deadline",
-        des: "Check Deadline App giúp tự động kiểm tra và thêm các sự kiện các môn học ở trang UTH course vào Google Calendar và Task.",
-        tech: ["Python", "Google API"],
-        link: "https://github.com/duynam2802/UTH_APP",
-        demo: ""
-    },
-    {
-       img: "./assets/images/chilgrowth.png",
-        title: "Child Growth Tracking System ",
-        des: "[Project nhóm]<br>Phần mềm theo dõi sự tăng trưởng của trẻ em.",
-        tech: ["Java", "Html", "MySQL"],
-        link: "https://github.com/duynam2802/UTH_APP",
-        demo: "" 
-    }
-];
+    const projects = [
+        {
+            img: "./assets/images/project_cv_img.png",
+            title: "Website CV cá nhân",
+            des: "Trang web giới thiệu bản thân với thiết kế hiện đại và animation mượt mà.",
+            tech: ["HTML5", "CSS3", "JavaScript"],
+            link: "https://github.com/duynam2802/MY_CV",
+            demo: "https://duynam2802.github.io/MY_CV/"
+        },
+        {
+            img: "./assets/images/project_checkdeadline_img.png",
+            title: "Phần mềm kiểm tra deadline",
+            des: "Check Deadline App giúp tự động kiểm tra và thêm các sự kiện các môn học ở trang UTH course vào Google Calendar và Task.",
+            tech: ["Python", "Google API"],
+            link: "https://github.com/duynam2802/UTH_APP",
+            demo: ""
+        },
+        {
+            img: "./assets/images/chilgrowth.png",
+            title: "Child Growth Tracking System ",
+            des: "[Project nhóm]<br>Phần mềm theo dõi sự tăng trưởng của trẻ em.",
+            tech: ["Java", "Html", "MySQL"],
+            link: "https://github.com/duynam2802/UTH_APP",
+            demo: ""
+        }
+    ];
 
-const projectList = document.querySelector('.project-list.collunm');
-if (projectList) {
-    projectList.innerHTML = projects.map(project => `
+    const projectList = document.querySelector('.project-list.collunm');
+    if (projectList) {
+        projectList.innerHTML = projects.map(project => `
         <div class="project-item card">
             <div class="project-img">
                 <img src="${project.img}" alt="">
@@ -253,8 +253,35 @@ if (projectList) {
             </div>
         </div>
     `).join('');
-}
+    }
 
+    const animatedEls = document.querySelectorAll('.card, .education.card, .courses.card, .project-item.card, .contact-form.card');
+    function showOnScroll() {
+        animatedEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+
+});
+
+// animation card
+document.addEventListener('DOMContentLoaded', function () {
+    const animatedEls = document.querySelectorAll('.card, .education.card, .courses.card, .project-item.card, .contact-form.card');
+    function showOnScroll() {
+        animatedEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 60) {
+                el.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
 });
 
 
