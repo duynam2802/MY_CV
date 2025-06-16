@@ -650,7 +650,7 @@ body.dark-theme .theme-btn i::after {
 
 #skills.visible {
     opacity: 1;
-    animation: fadeInUp 1.3s cubic-bezier(.4,2,.6,1) forwards;;
+    /* animation: fadeInUp 0.5s cubic-bezier(.4,2,.6,1) forwards;; */
 }
 
 #about {

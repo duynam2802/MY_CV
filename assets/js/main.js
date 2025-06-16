@@ -33,17 +33,17 @@ const langDropdown = document.querySelector('.lang-dropdown');
 const langBtn = document.getElementById('lang-btn');
 let currentLang = 'vi';
 
-langBtn.addEventListener('click', function () {
-    if (currentLang === 'vi') {
-        currentLang = 'en';
-        langBtn.textContent = 'VIE';
+// langBtn.addEventListener('click', function () {
+//     if (currentLang === 'vi') {
+//         currentLang = 'en';
+//         langBtn.textContent = 'VIE';
 
-    } else {
-        currentLang = 'vi';
-        langBtn.textContent = 'ENG';
-        // Thực hiện đổi sang tiếng Việt ở đây nếu muốn
-    }
-});
+//     } else {
+//         currentLang = 'vi';
+//         langBtn.textContent = 'ENG';
+//         
+//     }
+// });
 
 // Đóng menu khi click ra ngoài
 document.addEventListener('click', function () {
