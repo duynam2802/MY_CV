@@ -117,7 +117,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 65px 20px;
-    margin-bottom: 65px;
+    /* margin-bottom: 65px;
+     */
+     padding-bottom: 65px;
 }
 
 
